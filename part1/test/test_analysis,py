@@ -1,0 +1,32 @@
+import pytest
+import numpy as np
+from part1.residual_analysis import residual_plots
+
+def test_residual_plots_output_keys():
+    """Test 1: Kiểm tra hàm trả về đúng các key cần thiết và kích thước dữ liệu."""
+    n, p = 10, 2
+    X = np.random.rand(n, p)
+    y = np.random.rand(n)
+    beta = np.array([0.1, 0.1])
+    
+    # Chạy test với plot=False để không mở cửa sổ biểu đồ
+    results = residual_plots(X, y, beta, plot=False)
+    
+    expected_keys = {"y_hat", "resid", "std_resid", "cooks_distance"}
+    assert set(results.keys()) == expected_keys, "Hàm phải trả về đúng các key mong đợi"
+    assert len(results["resid"]) == n, "Số lượng phần dư phải bằng số quan sát n"
+
+def test_residual_plots_cooks_distance_non_negative():
+    """Test 2: Kiểm tra giá trị logic của Cook's distance."""
+    # Tạo dữ liệu giả lập
+    n, p = 20, 2
+    X = np.random.rand(n, p)
+    y = np.random.rand(n)
+    beta = np.array([0.5, 0.5])
+    
+    results = residual_plots(X, y, beta, plot=False)
+    
+    # Cook's distance luôn không âm theo định nghĩa toán học
+    assert np.all(results["cooks_distance"] >= 0), "Cook's distance không thể âm"
+    # Kiểm tra xem có chứa NaN không
+    assert not np.isnan(results["cooks_distance"]).any(), "Cook's distance không được chứa NaN"

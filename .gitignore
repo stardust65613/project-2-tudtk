@@ -1,0 +1,14 @@
+# Môi trường ảo (Virtual Environment)
+.venv/
+venv/
+env/
+
+# Cache của Pytest
+.pytest_cache/
+.pytest_cache/*
+
+# Cache của Python (file .pyc)
+__pycache__/
+*.pyc
+
+temp/
