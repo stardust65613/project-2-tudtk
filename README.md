@@ -49,6 +49,7 @@ Group_<ID>/
     ├── model_comparison.py # So sánh mô hình
     ├── part2_notebook.ipynb
     └── test/               # Chứa các unit test
+```
 
 ## 🛠 Hướng dẫn sử dụng
 ### 1. Part 1: Cơ sở lý thuyết
