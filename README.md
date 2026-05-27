@@ -1,7 +1,6 @@
-# Tên Đồ Án / Bài Tập Lớn
-
+# ĐỒ ÁN 2 Data Fitting và Phương Pháp OLS
 ## Nhóm Thực Hiện
-* **Thành viên 1:** [Họ tên] - [MSSV]
+* **Thành viên 1:** Nguyễn Hải Đăng - 23120027
 * **Thành viên 2:** [Họ tên] - [MSSV]
 * **Giảng viên hướng dẫn:** [Tên giảng viên]
 
