@@ -168,7 +168,7 @@ def test_model_metrics_f_statistic_consistency():
 
 def test_vif_perfect_multicollinearity():
     """
-    Test 1: Trường hợp đa cộng tuyến hoàn hảo.
+    Test trường hợp đa cộng tuyến hoàn hảo.
     Nếu hai cột giống hệt nhau, VIF phải trả về vô cùng (np.inf).
     """
     X = np.array([[1, 1, 2.0001],
@@ -182,7 +182,7 @@ def test_vif_perfect_multicollinearity():
 
 def test_vif_orthogonal_variables():
     """
-    Test 2: Trường hợp các biến trực giao (không liên quan).
+    Test trường hợp các biến trực giao (không liên quan).
     VIF của các biến độc lập nên xấp xỉ bằng 1.
     """
     # Ma trận với các biến trực giao
@@ -197,7 +197,7 @@ def test_vif_orthogonal_variables():
     np.testing.assert_allclose(vif_values[1:], 1.0, atol=1e-7)
 
 def test_vif_output_shape():
-    """Test 3: Kiểm tra kích thước của mảng kết quả."""
+    """Test kiểm tra kích thước của mảng kết quả."""
     n, p = 10, 3
     X = np.random.rand(n, p)
     
