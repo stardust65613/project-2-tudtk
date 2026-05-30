@@ -130,9 +130,6 @@ def plot_residual_analysis(X, y, beta):
     n, p = X_mat.shape
     mse = np.sum(residuals**2) / (n - p)
     
-    # ----------------==========================================================
-    # KIẾN TRÚC TOÁN HỌC TỐI ƯU: TÍNH LEVERAGES THEO HÀNG (TRÁNH BIẾN N^2 MEMORY)
-    # ----------------==========================================================
     X_T_X_inv = np.linalg.inv(X_mat.T @ X_mat)
     # Thay vì X @ Inv @ X.T, ta tính tích chập từng hàng để lấy ngay đường chéo chính
     leverages = np.sum((X_mat @ X_T_X_inv) * X_mat, axis=1)
